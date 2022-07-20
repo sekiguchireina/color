@@ -28,7 +28,7 @@ while(True):
     hsv_3[:, :, 0] = np.where(hsv_2[:, :, 0]<5,hsv_2[:, :, 0]+18,hsv_2[:, :, 0])
 
     #赤以外白黒にする
-    hsv_3[:,:,1] = np.where((hsv_3[:, :, 0]>18) & (hsv_3[:, :, 0]<26),hsv[:,:,(1)],hsv_3[:,:,(1)]*s_magnification)
+    hsv_3[:,:,1] = np.where((hsv_3[:, :, 0]>17) & (hsv_3[:, :, 0]<26),hsv_3[:,:,(1)],hsv_3[:,:,(1)]*s_magnification)
 
     # HSV->BGR変換
     bgr = cv2.cvtColor(hsv_3, cv2.COLOR_HSV2BGR)
